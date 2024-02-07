@@ -485,9 +485,12 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                   const SizedBox(width: 8),
                 ],
                 FittedBox(
-                  child: Text(
-                    '+${_selectedCountry.dialCode}',
-                    style: widget.dropdownTextStyle,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 5.0),
+                    child: Text(
+                      '+${_selectedCountry.dialCode}',
+                      style: widget.dropdownTextStyle,
+                    ),
                   ),
                 ),
                 if (widget.enabled &&
