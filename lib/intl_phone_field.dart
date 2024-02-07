@@ -460,6 +460,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 const SizedBox(
                   width: 4,
