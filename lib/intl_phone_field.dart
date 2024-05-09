@@ -440,6 +440,15 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       },
       validator: (value) {
         if (value == null || !isNumeric(value)) return validatorMessage;
+        if (_selectedCountry.startingPatterns != null) {
+          for (int x = 0; x < _selectedCountry.startingPatterns!.length; x++) {
+            if (value.startsWith(_selectedCountry.startingPatterns![x])) {
+              break;
+            } else if (x == _selectedCountry.startingPatterns!.length - 1) {
+              return widget.invalidNumberMessage;
+            }
+          }
+        }
         if (!widget.disableLengthCheck) {
           return value.length >= _selectedCountry.minLength &&
                   value.length <= _selectedCountry.maxLength

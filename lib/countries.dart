@@ -7545,8 +7545,8 @@ class Country {
   final String regionCode;
   final int minLength;
   final int maxLength;
-
-  const Country({
+  final List<String>? startingPatterns;
+  const Country( {
     required this.name,
     required this.flag,
     required this.code,
@@ -7555,6 +7555,7 @@ class Country {
     required this.minLength,
     required this.maxLength,
     this.regionCode = "",
+    this.startingPatterns,
   });
 
   String get fullCountryCode {
